@@ -4,7 +4,7 @@ organization := "net.ground5hark.sbt"
 
 name := "sbt-concat"
 
-version := "0.1.8"
+version := "0.1.8-IDECIDE"
 
 scalaVersion := "2.10.4"
 
@@ -28,14 +28,7 @@ scriptedLaunchOpts ++= Seq(
   s"-Dproject.version=${version.value}"
 )
 
-publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  Some(if (isSnapshot.value) {
-    "snapshots" at nexus + "content/repositories/snapshots"
-  } else {
-    "releases" at nexus + "service/local/staging/deploy/maven2"
-  })
-}
+publishTo := Some("iDecide Thrid Party" at "https://nexus.flexis.ru/content/repositories/thirdparty")
 
 pomExtra := (
   <url>https://github.com/ground5hark/sbt-concat</url>
